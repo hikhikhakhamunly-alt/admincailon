@@ -16,7 +16,7 @@ button,input,select{font:inherit}
 #prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--cyan),var(--gold));z-index:200;transition:width .35s}
 #prog.on{width:85%}
 .glass{background:var(--glass);border:1px solid var(--line);border-radius:16px;backdrop-filter:blur(8px);box-shadow:0 10px 30px rgba(0,0,0,.35)}
-.btn{cursor:pointer;border:1px solid var(--cyan);background:linear-gradient(135deg,#0876ed,#09c8f1);color:#fff;border-radius:10px;padding:8px 14px;font-weight:800;position:relative;transition:transform .12s,filter .15s,opacity .15s;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.btn{cursor:pointer;border:1px solid var(--cyan);background:linear-gradient(135deg,#0876ed,#09c8f1);color:#fff;border-radius:10px;padding:8px 14px;font-weight:800;transition:transform .12s,filter .15s,opacity .15s;display:inline-flex;align-items:center;justify-content:center;gap:6px}
 .btn:hover:not(:disabled){filter:brightness(1.15);transform:translateY(-1px)}
 .btn:active:not(:disabled){transform:translateY(1px) scale(.97)}
 .btn:disabled{opacity:.45;cursor:not-allowed}
@@ -30,7 +30,6 @@ button,input,select{font:inherit}
 input,select{background:#061a35;color:var(--txt);border:1px solid #21649a;border-radius:9px;padding:9px 10px;outline:none;width:100%}
 input:focus,select:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(46,223,255,.15)}
 input[type=checkbox]{width:16px;height:16px;accent-color:var(--cyan)}
-input[type=range]{padding:0;accent-color:var(--cyan)}
 label.lbl{color:var(--mut);font-size:12px;display:block;margin:10px 0 4px}
 .hidden{display:none!important}
 .mut{color:var(--mut)}.num{font-variant-numeric:tabular-nums}
@@ -41,17 +40,15 @@ label.lbl{color:var(--mut);font-size:12px;display:block;margin:10px 0 4px}
 .tag.bad{color:var(--bad);border-color:var(--bad)}
 .tag.gold{color:var(--gold);border-color:var(--gold)}
 .btns{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
-/* Đăng nhập */
 #login{position:fixed;inset:0;z-index:150;display:grid;place-items:center;padding:16px}
 .lbox{width:min(400px,100%);padding:28px;text-align:center;animation:pop .5s ease}
 @keyframes pop{from{transform:scale(.9);opacity:0}to{transform:none;opacity:1}}
 .logo{font-size:46px;animation:bob 3s ease-in-out infinite}
 @keyframes bob{50%{transform:translateY(-8px)}}
 .brand{font-weight:1000;font-size:20px;letter-spacing:1px}
-/* Khung chính */
 #app{display:none;position:relative;z-index:1;min-height:100vh;grid-template-columns:240px 1fr}
 #app.on{display:grid}
-aside{padding:16px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:6px;border-radius:0 16px 16px 0}
+aside{padding:16px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:6px;border-radius:0 16px 16px 0;overflow:auto}
 .nav{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;color:var(--mut);cursor:pointer;border:1px solid transparent;background:none;text-align:left;width:100%;font-weight:700;transition:background .15s,color .15s}
 .nav:hover{background:rgba(46,223,255,.08);color:var(--txt)}
 .nav.on{background:linear-gradient(90deg,rgba(46,223,255,.22),transparent);color:var(--txt);border-color:var(--line)}
@@ -71,7 +68,6 @@ main{padding:20px;min-width:0}
 .stat{padding:16px;position:relative;overflow:hidden}
 .stat .v{font-size:26px;font-weight:900;margin-top:4px}
 .stat .l{color:var(--mut);font-size:12px}
-.stat::after{content:'';position:absolute;right:-20px;top:-20px;width:80px;height:80px;border-radius:50%;background:radial-gradient(circle,rgba(46,223,255,.25),transparent 70%)}
 .card{padding:16px}
 .card h3{margin:0 0 10px;font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
 .bar{display:grid;grid-template-columns:110px 1fr 120px;gap:10px;align-items:center;margin:8px 0;font-size:13px}
@@ -88,7 +84,6 @@ tbody tr.sel{background:rgba(255,211,79,.1)}
 .toolbar input{max-width:260px}
 .toolbar select{width:auto}
 .bulkbar{position:sticky;bottom:10px;margin-top:12px;padding:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;animation:pop .3s ease;z-index:5}
-/* Ngăn chi tiết */
 #drawer{position:fixed;top:0;right:-580px;bottom:0;width:min(520px,100%);z-index:120;padding:18px;overflow:auto;transition:right .4s cubic-bezier(.2,.8,.2,1);border-radius:18px 0 0 18px}
 #drawer.open{right:0}
 .dstats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
@@ -97,12 +92,10 @@ tbody tr.sel{background:rgba(255,211,79,.1)}
 .dact{border-top:1px solid var(--line);padding-top:12px;margin-top:12px}
 .xbtn{position:absolute;top:14px;right:14px}
 .txrow{display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px solid rgba(46,223,255,.1)}
-/* Hộp thoại xác nhận */
 #modal{position:fixed;inset:0;background:rgba(1,8,23,.7);display:grid;place-items:center;z-index:180;opacity:0;pointer-events:none;transition:opacity .25s}
 #modal.show{opacity:1;pointer-events:auto}
 #modal .mbox{width:min(420px,92%);padding:22px;transform:scale(.9);transition:transform .25s}
 #modal.show .mbox{transform:none}
-/* Thông báo nổi */
 #toasts{position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;gap:8px;z-index:250}
 .toast{padding:12px 16px;border-radius:12px;background:#0a2a4a;border:1px solid var(--cyan);box-shadow:0 8px 20px rgba(0,0,0,.4);animation:slide .3s ease;max-width:360px}
 .toast.ok{border-color:var(--ok)}
@@ -110,7 +103,6 @@ tbody tr.sel{background:rgba(255,211,79,.1)}
 .toast.warn{border-color:var(--gold)}
 .toast.out{opacity:0;transform:translateX(20px);transition:all .35s}
 @keyframes slide{from{transform:translateX(30px);opacity:0}}
-/* Bảng vòng quay */
 .wrow{display:grid;grid-template-columns:110px 1fr 90px 70px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid rgba(46,223,255,.1)}
 .rtp{font-size:30px;font-weight:900}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
@@ -129,7 +121,6 @@ tbody tr.sel{background:rgba(255,211,79,.1)}
 <div id="prog"></div>
 <div id="toasts"></div>
 
-<!-- Hộp thoại xác nhận -->
 <div id="modal"><div class="mbox glass">
   <h3 id="mTitle" style="margin:0 0 8px"></h3>
   <p id="mMsg" class="mut" style="white-space:pre-line"></p>
@@ -139,7 +130,6 @@ tbody tr.sel{background:rgba(255,211,79,.1)}
   </div>
 </div></div>
 
-<!-- Đăng nhập -->
 <div id="login"><div class="lbox glass">
   <div class="logo">🛠️</div>
   <div class="brand">STOCK &amp; FISH — QUẢN TRỊ</div>
@@ -150,12 +140,12 @@ tbody tr.sel{background:rgba(255,211,79,.1)}
   <p class="mut" style="font-size:12px;margin-top:12px">Phiên chỉ lưu trong tab này, đóng tab là mất.</p>
 </div></div>
 
-<!-- Khung chính -->
 <div id="app">
   <aside class="glass">
     <div style="font-weight:1000;font-size:17px;margin:4px 6px 14px">🌊 Stock &amp; Fish<br><span class="mut" style="font-size:12px;font-weight:700">Trung tâm quản trị</span></div>
     <button class="nav on" data-go="dash"><span class="ic">📊</span>Tổng quan</button>
     <button class="nav" data-go="players"><span class="ic">👥</span>Người chơi</button>
+    <button class="nav" data-go="devices"><span class="ic">📱</span>Thiết bị / spam</button>
     <button class="nav" data-go="live"><span class="ic">🎲</span>Sảnh trực tiếp</button>
     <button class="nav" data-go="events"><span class="ic">🔥</span>Sự kiện &amp; thông báo</button>
     <button class="nav" data-go="money"><span class="ic">💰</span>Xu &amp; mã quà</button>
@@ -181,7 +171,6 @@ tbody tr.sel{background:rgba(255,211,79,.1)}
       </div>
     </div>
 
-    <!-- TỔNG QUAN -->
     <section class="view on" id="v-dash">
       <div class="grid g4" id="statGrid"></div>
       <div class="grid g3" style="margin-top:14px">
@@ -191,7 +180,6 @@ tbody tr.sel{background:rgba(255,211,79,.1)}
       </div>
     </section>
 
-    <!-- NGƯỜI CHƠI -->
     <section class="view" id="v-players">
       <div class="glass card">
         <div class="toolbar">
@@ -227,13 +215,21 @@ tbody tr.sel{background:rgba(255,211,79,.1)}
       </div>
     </section>
 
-    <!-- SẢNH TRỰC TIẾP -->
+    <section class="view" id="v-devices">
+      <div class="glass card">
+        <h3>📱 Thiết bị đã dùng <span class="tag">chặn khi ≥ 3 tài khoản</span> <button class="btn sm ghost" id="devReload">⟳</button></h3>
+        <div class="tablebox"><table>
+          <thead><tr><th>Mã thiết bị</th><th>Số tài khoản</th><th>Tài khoản</th><th>Hoạt động gần nhất</th><th>Trạng thái</th><th></th></tr></thead>
+          <tbody id="devBody"></tbody>
+        </table></div>
+      </div>
+    </section>
+
     <section class="view" id="v-live">
       <div class="toolbar"><span class="mut">Tự cập nhật mỗi 5 giây</span><span class="tag ok">● trực tuyến</span></div>
       <div class="live" id="liveGrid"></div>
     </section>
 
-    <!-- SỰ KIỆN -->
     <section class="view" id="v-events">
       <div class="grid g2">
         <div class="glass card"><h3>🔥 Sự kiện nhân đôi xu bắn cá</h3>
@@ -250,7 +246,6 @@ tbody tr.sel{background:rgba(255,211,79,.1)}
       </div>
     </section>
 
-    <!-- XU & MÃ QUÀ -->
     <section class="view" id="v-money">
       <div class="grid g2">
         <div class="glass card"><h3>🎁 Phát thưởng xu <span class="tag gold" data-super>cho tất cả: chỉ super admin</span></h3>
@@ -275,10 +270,9 @@ tbody tr.sel{background:rgba(255,211,79,.1)}
       </div>
     </section>
 
-    <!-- CÀI ĐẶT GAME (SUPER) -->
     <section class="view" id="v-settings">
       <div class="grid g2">
-        <div class="glass card"><h3>🛠️ Bảo trì & trò chơi</h3>
+        <div class="glass card"><h3>🛠️ Bảo trì &amp; trò chơi</h3>
           <label class="btns" style="margin:0"><input type="checkbox" id="cMaint"> Bật bảo trì (chỉ admin vào được)</label>
           <label class="lbl">Thông báo bảo trì</label><input id="cMaintMsg">
           <div class="chips" style="margin:14px 0">
@@ -301,7 +295,7 @@ tbody tr.sel{background:rgba(255,211,79,.1)}
         </div>
       </div>
       <div class="glass card" style="margin-top:14px"><h3>🎡 Bảng vòng quay <span class="tag" id="rtpTag">RTP —</span></h3>
-        <p class="mut" style="margin:0 0 8px">Trọng số = tỉ lệ ra ô. Hệ số = số lần mệnh giá được trả. RTP là tỉ lệ người chơi lấy lại trung bình. Nên để khoảng 40–95% để nhà game có lời và người chơi vẫn muốn chơi.</p>
+        <p class="mut" style="margin:0 0 8px">Trọng số = tỉ lệ ra ô. Hệ số = số lần mệnh giá được trả. Nên để RTP khoảng 40–95%.</p>
         <div id="wheelEd"></div>
         <div class="btns" style="justify-content:space-between">
           <div style="display:flex;gap:12px;align-items:center"><span class="rtp" id="rtpBig">—</span><span class="mut" id="rtpMsg"></span></div>
@@ -310,7 +304,6 @@ tbody tr.sel{background:rgba(255,211,79,.1)}
       </div>
     </section>
 
-    <!-- TÀI KHOẢN ADMIN (SUPER) -->
     <section class="view" id="v-admins">
       <div class="grid g2">
         <div class="glass card"><h3>🛡️ Tài khoản quản trị <button class="btn sm ghost" id="admReload">⟳</button></h3>
@@ -328,12 +321,11 @@ tbody tr.sel{background:rgba(255,211,79,.1)}
             <option value="superadmin">Super admin (toàn quyền)</option>
           </select>
           <div class="btns"><button class="btn gold" id="mkAdm">Tạo tài khoản</button></div>
-          <p class="mut" style="font-size:12px;margin-top:12px">Tài khoản gốc khoaitay1 và khoaitay2 nằm trong Code.gs, không xóa được tại đây.</p>
+          <p class="mut" style="font-size:12px;margin-top:12px">Tài khoản gốc admindeptrai và admindatbeo nằm trong Code.gs, không xóa được tại đây.</p>
         </div>
       </div>
     </section>
 
-    <!-- NHẬT KÝ -->
     <section class="view" id="v-logs">
       <div class="glass card">
         <div class="toolbar"><input id="lSearch" placeholder="🔍 Lọc theo admin, hành động, đối tượng"><button class="btn sm ghost" id="logReload">⟳ Tải lại</button></div>
@@ -346,7 +338,6 @@ tbody tr.sel{background:rgba(255,211,79,.1)}
   </main>
 </div>
 
-<!-- Ngăn chi tiết người chơi -->
 <div id="drawer" class="glass">
   <button class="btn sm ghost xbtn" id="dClose">✕</button>
   <div style="font-size:20px;font-weight:1000" id="dName"></div>
@@ -362,7 +353,6 @@ tbody tr.sel{background:rgba(255,211,79,.1)}
       <button class="btn sm" data-d="set">= Đặt số dư</button>
     </div>
   </div>
-
   <div class="dact">
     <label class="lbl">Lý do khóa (tùy chọn)</label>
     <input id="dReason">
@@ -371,7 +361,6 @@ tbody tr.sel{background:rgba(255,211,79,.1)}
       <button class="btn sm ghost" data-d="kick">👢 Đăng xuất</button>
     </div>
   </div>
-
   <div class="dact">
     <label class="lbl">Mật khẩu mới (≥4 ký tự)</label>
     <input id="dPass">
@@ -380,14 +369,12 @@ tbody tr.sel{background:rgba(255,211,79,.1)}
       <button class="btn sm ghost" data-d="resetDaily">📅 Reset nhiệm vụ</button>
     </div>
   </div>
-
   <div class="dact" data-super>
     <div class="btns">
       <button class="btn sm gold" data-d="resetAccount">♻️ Reset tài khoản</button>
       <button class="btn sm danger" data-d="delete">🗑️ Xóa tài khoản</button>
     </div>
   </div>
-
   <div class="dact">
     <b>Giao dịch gần đây</b>
     <div id="dTxs" style="max-height:260px;overflow:auto;margin-top:8px"></div>
@@ -395,23 +382,17 @@ tbody tr.sel{background:rgba(255,211,79,.1)}
 </div>
 
 <script>
-/* ==========================================================
-   CẤU HÌNH — URL máy chủ Apps Script (giống index.html)
-   ========================================================== */
 const API='https://script.google.com/macros/s/AKfycbxWjJjYsgyLci4teWEdzp7SocLfpO9WnmwErbyq1-ZB2NYurcVftXgE0WjvTR2WLhh15A/exec';
-
 const ROOM_NAMES={tap:'🌊 Tập Bắn',thuong:'🐟 Thường',haicau:'🦭 Hải Cẩu',daorua:'🐢 Đảo Rùa',daigia:'🦈 Đại Gia',huyenthoai:'🐉 Huyền Thoại'};
 const BC_NAMES={bau:'🎃 Bầu',cua:'🦀 Cua',tom:'🦐 Tôm',ca:'🐟 Cá',ga:'🐓 Gà',nai:'🦌 Nai'};
-const WHEEL_LABELS=['Trượt','Hoàn 50%','Hoàn vốn','x2','x3','x5','x10'];
-const TITLES={dash:'Tổng quan',players:'Người chơi',live:'Sảnh trực tiếp',events:'Sự kiện & thông báo',money:'Xu & mã quà',settings:'Cài đặt game',admins:'Tài khoản admin',logs:'Nhật ký'};
+const TITLES={dash:'Tổng quan',players:'Người chơi',devices:'Thiết bị / spam',live:'Sảnh trực tiếp',events:'Sự kiện & thông báo',money:'Xu & mã quà',settings:'Cài đặt game',admins:'Tài khoản admin',logs:'Nhật ký'};
 
 const $=id=>document.getElementById(id);
 const fmt=n=>Math.floor(Number(n)||0).toLocaleString('vi-VN');
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-let ME=null, LIST=[], SEL=new Set(), DRAWER=null, LIVE_T=null, LOGS=[], WHEEL_INFO=null;
+let ME=null, LIST=[], SEL=new Set(), DRAWER=null, LIVE_T=null, LOGS=[];
 
-/* ===== Hiệu ứng nền bong bóng ===== */
 (function bubbles(){
   const b=$('bub');
   for(let i=0;i<24;i++){
@@ -422,11 +403,9 @@ let ME=null, LIST=[], SEL=new Set(), DRAWER=null, LIVE_T=null, LOGS=[], WHEEL_IN
   }
 })();
 
-/* ===== Thanh tiến trình khi đang gọi máy chủ ===== */
 let inflight=0;
 function busy(d){inflight+=d;$('prog').classList.toggle('on',inflight>0)}
 
-/* ===== Thông báo nổi ===== */
 function toast(msg,type='ok'){
   const t=document.createElement('div');
   t.className='toast '+type;t.textContent=msg;
@@ -435,7 +414,6 @@ function toast(msg,type='ok'){
   setTimeout(()=>t.remove(),3400);
 }
 
-/* ===== Hộp thoại xác nhận ===== */
 function confirmBox(title,msg,danger){
   return new Promise(res=>{
     $('mTitle').textContent=title;$('mMsg').textContent=msg;
@@ -449,7 +427,6 @@ function confirmBox(title,msg,danger){
   });
 }
 
-/* ===== Gọi máy chủ ===== */
 async function api(body){
   busy(1);
   try{
@@ -470,7 +447,6 @@ async function call(op,extra={}){
   }
 }
 
-/* Chạy hàm kèm hiệu ứng xoay trên nút */
 async function run(btn,fn){
   if(btn)btn.classList.add('busy');
   try{return await fn()}
@@ -479,7 +455,6 @@ async function run(btn,fn){
 }
 function safe(fn){return Promise.resolve().then(fn).catch(e=>toast(e.message||'Lỗi','err'))}
 
-/* Số đếm chạy */
 function countUp(el,to){
   const from=Number(el.dataset.v||0);el.dataset.v=to;
   const t0=performance.now();
@@ -487,12 +462,13 @@ function countUp(el,to){
   requestAnimationFrame(step);
 }
 
-/* ===== Đăng nhập / đăng xuất ===== */
 async function doLogin(){
   const name=$('lName').value.trim(),pass=$('lPass').value;
   if(!name||!pass)return toast('Nhập tên và mật khẩu','warn');
   await run($('lBtn'),async()=>{
-    const j=await api({action:'login',name,pass});
+    const r=await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'login',name,pass})});
+    const j=await r.json();
+    if(!j.ok)throw new Error(j.error||'Đăng nhập thất bại');
     if(j.role!=='admin'&&j.role!=='superadmin')throw new Error('Tài khoản này không có quyền quản trị');
     ME={name,pass,role:j.role};
     sessionStorage.setItem('sf_admin',JSON.stringify(ME));
@@ -525,14 +501,13 @@ function logout(auto){
 }
 $('logoutBtn').onclick=()=>logout(false);
 
-/* ===== Điều hướng ===== */
 document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));
 function go(v){
   document.querySelectorAll('.view').forEach(x=>x.classList.toggle('on',x.id==='v-'+v));
   document.querySelectorAll('.nav').forEach(x=>x.classList.toggle('on',x.dataset.go===v));
   $('vTitle').textContent=TITLES[v]||'';
   clearInterval(LIVE_T);LIVE_T=null;
-  const loaders={dash:loadDash,players:loadPlayers,live:loadLive,money:loadCodes,settings:loadSettings,admins:loadAdmins,logs:loadLogs};
+  const loaders={dash:loadDash,players:loadPlayers,devices:loadDevices,live:loadLive,money:loadCodes,settings:loadSettings,admins:loadAdmins,logs:loadLogs};
   if(v==='live')LIVE_T=setInterval(loadLive,5000);
   return safe(loaders[v]||(()=>{}));
 }
@@ -630,14 +605,36 @@ async function bulkAct(spec,btn){
     if(!amount)return toast('Nhập số xu','warn');
   }
   if(act==='lock'){reason=prompt('Lý do khóa (có thể để trống):','')||''}
-  const names_txt={adjust:'cộng/trừ xu',lock:'khóa',unlock:'mở khóa',kick:'đăng xuất'}[act];
-  const ok=await confirmBox('Xác nhận hàng loạt',`${names_txt[0].toUpperCase()+names_txt.slice(1)} ${names.length} người chơi đã chọn?`,act!=='unlock');
+  const label={adjust:'cộng/trừ xu',lock:'khóa',unlock:'mở khóa',kick:'đăng xuất'}[act];
+  const ok=await confirmBox('Xác nhận hàng loạt',`${label[0].toUpperCase()+label.slice(1)} ${names.length} người chơi đã chọn?`,act!=='unlock');
   if(!ok)return;
   await run(btn,async()=>{
     const j=await call('multi',{names,act,amount,reason});
     if(j){toast(j.message);SEL.clear();await refreshList()}
   });
 }
+
+/* ===== THIẾT BỊ / SPAM ===== */
+async function loadDevices(){
+  const j=await call('devList');
+  if(!j)return;
+  $('devBody').innerHTML=j.devices.map(d=>`<tr>
+    <td><code>${esc(d.fp.slice(0,14))}…</code></td>
+    <td class="num">${d.count}</td>
+    <td>${d.users.map(esc).join(', ')}</td>
+    <td class="mut">${esc(d.last)}</td>
+    <td>${d.banned?'<span class="tag bad">đã khóa</span>':(d.count>=3?'<span class="tag gold">nghi spam</span>':'<span class="tag ok">bình thường</span>')}</td>
+    <td>${d.banned?`<button class="btn sm gold" data-unban="${esc(d.fp)}">Mở khóa</button>`:''}</td>
+  </tr>`).join('')||'<tr><td colspan="6" class="mut center">Chưa có thiết bị nào</td></tr>';
+}
+$('devReload').onclick=()=>run($('devReload'),loadDevices);
+document.addEventListener('click',async e=>{
+  const b=e.target.closest('[data-unban]');
+  if(!b)return;
+  const ok=await confirmBox('Mở khóa thiết bị','Mở khóa thiết bị này cho phép các tài khoản đăng nhập lại?',false);
+  if(!ok)return;
+  await run(b,async()=>{const j=await call('devUnban',{fp:b.dataset.unban});if(j){toast(j.message);loadDevices()}});
+});
 
 /* ===== NGĂN CHI TIẾT ===== */
 async function openDrawer(n){
@@ -694,7 +691,7 @@ async function drawerAct(spec,btn){
   const ok=await confirmBox('Xác nhận: '+n,msg+'?',danger);
   if(!ok)return;
   await run(btn,async()=>{
-    const j=await call(op==='adjust'||op==='set'?op:op,{target:n,...extra});
+    const j=await call(op,{target:n,...extra});
     if(!j)return;
     toast(j.message);
     if(op==='delete'){closeDrawer();await refreshList()}
@@ -769,7 +766,7 @@ async function loadCodes(){
   const j=await call('codes');
   if(!j)return;
   $('codesBody').innerHTML=j.codes.map(c=>`<tr>
-    <td><code>SF-${esc(c.id)}</code></td>
+    <td><code>${esc(c.id)}</code></td>
     <td class="gold num">${fmt(c.amount)}</td>
     <td>${esc(c.from)}</td>
     <td>${c.used?'<span class="tag bad">đã dùng</span>':'<span class="tag ok">chưa dùng</span>'}</td>
@@ -791,7 +788,6 @@ async function loadSettings(){
   ['fish','bc','door','lock','wheel'].forEach(g=>$('cG_'+g).checked=c.games[g]);
   $('bRound').value=j.bc.roundSec;
   $('bMax').value=j.bc.maxPer;
-  WHEEL_INFO=j.wheel;
   buildWheel(j.wheel);
 }
 function buildWheel(wi){
@@ -901,7 +897,6 @@ function renderLogs(){
 $('lSearch').oninput=renderLogs;
 $('logReload').onclick=()=>run($('logReload'),loadLogs);
 
-/* ===== KHỞI TẠO ===== */
 const saved=sessionStorage.getItem('sf_admin');
 if(saved){try{ME=JSON.parse(saved);enter()}catch(e){sessionStorage.removeItem('sf_admin')}}
 </script>
